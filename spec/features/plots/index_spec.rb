@@ -68,6 +68,8 @@ RSpec.describe 'Plot Index' do
         click_link 'Remove Plant'
       end
 
+      expect(current_path).to eq(plots_path)
+
       within("#plot-#{@plot_2.id}") do
         expect(page).to_not have_content(@plant_2.name)
       end
